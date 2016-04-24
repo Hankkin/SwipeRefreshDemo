@@ -13,7 +13,7 @@ compile 'com.hankkin:swiperefresh:1.0.0
 
 ###xml引用
 ```java
- <com.hankkin.swiperefresh.RefreshSwipeMenuListView
+ <com.hankkin.library.RefreshSwipeMenuListView
         android:id="@+id/swipe"
         android:dividerHeight="1dp"
         android:layout_width="match_parent"
