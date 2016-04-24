@@ -7,6 +7,6 @@
 ###使用方法
 
 ###build.gradle文件
-'''
+```java
 compile 'com.hyman:basetools:1.0.0
-'''
+```
