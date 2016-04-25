@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-
+apply plugin: 'com.novoda.bintray-release'//添加
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.1"
@@ -22,4 +22,14 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.0'
+}
+
+//添加
+publish {
+    userOrg = 'huang'//bintray.com用户名
+    groupId = 'com.hankkin'//jcenter上的路径
+    artifactId = 'swiperefresh'//项目名称
+    publishVersion = '1.0.0'//版本号
+    desc = '自定义组合控件上拉+下拉+左滑删除置顶'//描述，不重要
+    website = 'https://github.com/Hankkin/SwipeRefreshDemo'//网站，不重要
 }
