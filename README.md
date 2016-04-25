@@ -8,7 +8,7 @@
 
 ###build.gradle文件
 ```java
-compile 'com.hankkin:swiperefresh:1.0.0
+compile 'com.hankkin:swiperefresh:1.0.1
 ```
 
 ###xml引用
