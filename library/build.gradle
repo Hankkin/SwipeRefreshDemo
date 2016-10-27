@@ -8,7 +8,7 @@ android {
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.1"
     }
     buildTypes {
         release {
@@ -29,7 +29,7 @@ publish {
     userOrg = 'huang'//bintray.com用户名
     groupId = 'com.hankkin'//jcenter上的路径
     artifactId = 'swiperefresh'//项目名称
-    publishVersion = '1.0.0'//版本号
-    desc = '自定义组合控件上拉+下拉+左滑删除置顶'//描述，不重要
+    publishVersion = '1.0.1'//版本号
+    desc = '更新右滑崩溃bug'//描述，不重要
     website = 'https://github.com/Hankkin/SwipeRefreshDemo'//网站，不重要
 }

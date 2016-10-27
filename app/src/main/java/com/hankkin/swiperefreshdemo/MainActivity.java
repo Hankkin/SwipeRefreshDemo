@@ -9,6 +9,7 @@ import android.util.TypedValue;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.hankkin.library.RefreshSwipeMenuListView;
@@ -24,6 +25,8 @@ public class MainActivity extends AppCompatActivity implements RefreshSwipeMenuL
     private RefreshSwipeMenuListView rsmLv;
     private List<MsgBean> data;
     private MessageAdapter adapter;
+    private Button btnRefresh,btnAdd;
+    private int po;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,8 @@ public class MainActivity extends AppCompatActivity implements RefreshSwipeMenuL
         setContentView(R.layout.activity_main);
 
         rsmLv = (RefreshSwipeMenuListView) findViewById(R.id.swipe);
+        btnRefresh = (Button) findViewById(R.id.btn_refresh);
+        btnAdd = (Button) findViewById(R.id.btn_add);
         data = new ArrayList<>();
 
 
@@ -88,6 +93,24 @@ public class MainActivity extends AppCompatActivity implements RefreshSwipeMenuL
                 }
             }
         });
+
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                data.add(po,data.get(po));
+                adapter.notifyDataSetChanged();
+            }
+        });
+
+        btnRefresh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                data.clear();
+                initData();
+                rsmLv.setAdapter(adapter);
+            }
+        });
     }
 
 
@@ -113,6 +136,7 @@ public class MainActivity extends AppCompatActivity implements RefreshSwipeMenuL
             public void onAnimationRepeat(Animation animation) {}
             public void onAnimationEnd(Animation animation) {
                 data.remove(index);
+                po = index;
                 adapter.notifyDataSetChanged();
                 animation.cancel();
             }
