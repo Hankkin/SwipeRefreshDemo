@@ -9,14 +9,11 @@ import android.util.TypedValue;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.Toast;
-
 import com.hankkin.library.RefreshSwipeMenuListView;
 import com.hankkin.library.SwipeMenu;
 import com.hankkin.library.SwipeMenuCreator;
 import com.hankkin.library.SwipeMenuItem;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +22,6 @@ public class MainActivity extends AppCompatActivity implements RefreshSwipeMenuL
     private RefreshSwipeMenuListView rsmLv;
     private List<MsgBean> data;
     private MessageAdapter adapter;
-    private Button btnRefresh,btnAdd;
     private int po;
 
     @Override
@@ -34,8 +30,6 @@ public class MainActivity extends AppCompatActivity implements RefreshSwipeMenuL
         setContentView(R.layout.activity_main);
 
         rsmLv = (RefreshSwipeMenuListView) findViewById(R.id.swipe);
-        btnRefresh = (Button) findViewById(R.id.btn_refresh);
-        btnAdd = (Button) findViewById(R.id.btn_add);
         data = new ArrayList<>();
 
 
@@ -94,23 +88,6 @@ public class MainActivity extends AppCompatActivity implements RefreshSwipeMenuL
             }
         });
 
-        btnAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                data.add(po,data.get(po));
-                adapter.notifyDataSetChanged();
-            }
-        });
-
-        btnRefresh.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                data.clear();
-                initData();
-                rsmLv.setAdapter(adapter);
-            }
-        });
     }
 
 
@@ -162,15 +139,8 @@ public class MainActivity extends AppCompatActivity implements RefreshSwipeMenuL
         rsmLv.postDelayed(new Runnable() {
             @Override
             public void run() {
-                for (int i=0;i<10;i++){
-                    MsgBean msgBean = new MsgBean();
-                    msgBean.setName("张某某"+i);
-                    msgBean.setContent("你好，在么？"+i);
-                    msgBean.setTime("上午10:30");
-                    data.add(msgBean);
-                }
                 rsmLv.complete();
-                adapter.notifyDataSetChanged();
+                Toast.makeText(MainActivity.this,"已完成",Toast.LENGTH_SHORT).show();
             }
         },2000);
 

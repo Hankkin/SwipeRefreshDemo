@@ -2,12 +2,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
+    android:background="#353c43"
     android:gravity="bottom" >
 
     <RelativeLayout
         android:id="@+id/xlistview_header_content"
         android:layout_width="fill_parent"
-        android:background="#00000000"
         android:layout_height="60dp" >
 
         <LinearLayout
@@ -19,32 +19,13 @@
             android:orientation="vertical" >
 
             <TextView
+                android:textColor="#fff"
                 android:id="@+id/xlistview_header_hint_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#000"
-                android:textSize="16sp"
                 android:text="@string/xlistview_header_hint_normal" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="3dp" >
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#000"
-                    android:text="@string/xlistview_header_last_time"
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:id="@+id/xlistview_header_time"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#000"
-                    android:textSize="14sp" />
-            </LinearLayout>
         </LinearLayout>
 
         <ImageView
@@ -55,15 +36,16 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="-50dp"
             android:src="@drawable/xlistview_arrow" />
-
-        <ProgressBar
+        <ImageView
             android:id="@+id/xlistview_header_progressbar"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_alignLeft="@id/xlistview_header_text"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="-55dp"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            android:layout_alignLeft="@id/xlistview_header_text"
+            android:layout_marginRight="10dip"
+            android:src="@drawable/bga_refresh_loding"/>
     </RelativeLayout>
 
 </LinearLayout>

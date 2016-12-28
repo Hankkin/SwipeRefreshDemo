@@ -6,8 +6,8 @@
     <RelativeLayout
         android:id="@+id/xlistview_footer_content"
         android:layout_width="fill_parent"
-        android:layout_height="40dp"
-        android:padding="5dp">
+        android:layout_height="30dp"
+        >
 
         <LinearLayout
             android:id="@+id/xlistview_footer_progressbar"
@@ -17,14 +17,17 @@
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
-            <ProgressBar
-                android:layout_width="25dp"
-                android:layout_height="25dp" />
+            <ImageView
+                android:id="@+id/iv_normal_refresh_footer_chrysanthemum"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:layout_marginRight="10dip"
+                android:src="@drawable/bga_refresh_loding"/>
             <TextView
                 android:layout_marginLeft="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="正在加载请稍候..."/>
+                android:text="正在加载..."/>
         </LinearLayout>
 
     </RelativeLayout>
