@@ -1,17 +1,17 @@
 # SwipeRefreshDemo
 自定义组合控件上拉+下拉+左滑删除置顶
-###look at the screenshot:
+### look at the screenshot:
 
 <img src="http://img.blog.csdn.net/20160424143943440" width = "320" height = "640" alt="高仿微信群聊头像" align=center />
 
-###使用方法
+### 使用方法
 
-###build.gradle文件
+### build.gradle文件
 ```java
 compile 'com.hankkin:swiperefresh:1.0.1
 ```
 
-###xml引用
+### xml引用
 ```java
  <com.hankkin.library.RefreshSwipeMenuListView
         android:id="@+id/swipe"
@@ -20,7 +20,7 @@ compile 'com.hankkin:swiperefresh:1.0.1
         android:layout_height="match_parent"/>
 ```
 
-###创建左滑菜单
+### 创建左滑菜单
 
 ```java
       rsmLv.setAdapter(adapter);
@@ -58,7 +58,7 @@ compile 'com.hankkin:swiperefresh:1.0.1
         };
         rsmLv.setMenuCreator(creator);
 ```
-###左滑菜单监听
+### 左滑菜单监听
 ```java
 rsmLv.setOnMenuItemClickListener(new RefreshSwipeMenuListView.OnMenuItemClickListener() {
             @Override
@@ -75,8 +75,8 @@ rsmLv.setOnMenuItemClickListener(new RefreshSwipeMenuListView.OnMenuItemClickLis
             }
         });
 ```
-###我的博客
+### 我的博客
 ---------------------------
 <http://blog.csdn.net/lyhhj>
 
-###License
+### License
